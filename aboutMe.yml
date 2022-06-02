@@ -6,10 +6,10 @@ studentNumber: z5416832 # if you're not at UNSW, your org name, e.g. BVN
 officialEmail: jacky.q.tran@unsw.edu.au
 contactEmail: # don't write on this line
   firstBit: JackyTranq4 # this avoids spam, the @ is implied
-  otherBit: @gmail.com
+  otherBit: gmail.com
 # accounts
 stackOverflowLink: https://stackoverflow.com/users/19253751/jacktranq4
-github: JackyTranQ4
+github: JackyTranq4
 
 # This format is called YAML which stands for Yet Another Markup Language
 # It's supposed to be machine readable, and human readable. It does a pretty 
