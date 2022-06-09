@@ -17,18 +17,26 @@ print("hello! Let's get started")  # it printed "hello! Let's get started"
 
 some_words = ["what", "does", "this", "line", "do", "?"]
 
+# On each line a word will be printed in order
 for word in some_words:
     print(word)
+# Correct
 
+# Same as above
 for x in some_words:
     print(x)
+# Correct
 
+# Prints in a single line
 print(some_words)
+# Correct
 
+# It will print "some_words contains more than 3 words"
 if len(some_words) > 3:
     print("some_words contains more than 3 words")
+# Correct
 
-
+# Prints system, node, release, version, machine, and processor
 def usefulFunction():
     """
     You may want to look up what uname does before you guess
@@ -37,5 +45,7 @@ def usefulFunction():
     """
     print(platform.uname())
 
+
+# Did not print processor
 
 usefulFunction()
