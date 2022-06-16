@@ -279,7 +279,6 @@ def loops_7():
             layer_list.append("*")
         for i in range(side):
             layer_list.append(" ")
-        print(layer_list)
         pyramid_list.append(layer_list)
         side -= 1
     return pyramid_list
