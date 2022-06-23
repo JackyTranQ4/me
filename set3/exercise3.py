@@ -28,9 +28,53 @@ def advancedGuessingGame():
     Remember to think modular. Try to keep your functions small and single
     purpose if you can!
     """
+    validupper = False
+
+    print("\nWelcome to the guessing game!")
+    print("A number between _ and _ ?")
+    lowerBound = input("Enter a lower bound: ")
+    # print(f"lowerBound {lowerBound}")  #
+    lowerBound = asker(lowerBound)
+
+    upperBound = input("Enter an upper bound: ")
+    # print(f"upperBound {upperBound}")  #
+    while validupper == False:
+        asker(upperBound)
+        validupper = True
+        if upperBound < lowerBound:
+            validupper = False
+            print("upperBound is lower than lowerBound")
+
+    print(f"OK then, a number between {lowerBound} and {upperBound} ?")
+
+    actualNumber = random.randint(lowerBound, upperBound)
+
+    guessed = False
+
+    while guessed == False:
+        guessedNumber = input("Guess a number: ")
+        guessedNumber = asker(guessedNumber)
+        print(f"You guessed {guessedNumber},")
+        if guessedNumber == actualNumber:
+            print(f"You got it!! It was {actualNumber}")
+            guessed = True
+        elif guessedNumber < actualNumber:
+            print("Too small, try again :'(")
+        else:
+            print("Too big, try again :'(")
 
     return "You got it!"
     # the tests are looking for the exact string "You got it!". Don't modify that!
+
+
+def asker(string):
+    string = str(string)
+    while True:
+        if string.isdigit():
+            number = int(string)
+            return number
+        string = str(input("Integer: "))
+        # print(string)  #
 
 
 if __name__ == "__main__":

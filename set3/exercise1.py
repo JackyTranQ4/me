@@ -17,7 +17,11 @@ def loop_ranger(start, stop=None, step=1):
     Look up for how range() works in the python docs. You could  answer this
     with just the range function, but we'd like you to do it the long way.
     """
-    return None
+    list_of_numbers = []
+    while start < stop:
+        list_of_numbers.append(start)
+        start += step
+    return list_of_numbers
 
 
 def two_step_ranger(start, stop):
@@ -28,7 +32,8 @@ def two_step_ranger(start, stop):
 
     You can either reuse loop_ranger, or the range function that in the standard library
     """
-    return None
+    list_of_numbers = loop_ranger(start, stop, 2)
+    return list_of_numbers
 
 
 def stubborn_asker(low, high):
@@ -39,7 +44,10 @@ def stubborn_asker(low, high):
 
     Look up the docs for a function called "input"
     """
-    return None
+    while True:
+        number = input()
+        if number >= low and number <= high:
+            return number
 
 
 def not_number_rejector(message):
@@ -49,7 +57,10 @@ def not_number_rejector(message):
     (e.g. "cow", "six", "8!") then throw it out and ask for an actual number.
     When you do get a number, return it.
     """
-    return None
+    while True:
+        if message.isdigit():
+            return int(message)
+        message = str(input())
 
 
 def super_asker(low, high):
@@ -58,7 +69,12 @@ def super_asker(low, high):
     Combine what you learnt from stubborn_asker and not_number_rejector
     to make a function that does it all!
     """
-    return None
+    while True:
+        string = str(input())
+        if string.isdigit():
+            number = int(string)
+            if number >= low and number <= high:
+                return number
 
 
 if __name__ == "__main__":

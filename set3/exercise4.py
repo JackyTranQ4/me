@@ -2,6 +2,7 @@
 """Set 3, Exercise 4."""
 
 import math
+from os import access
 
 
 def binary_search(low, high, actual_number):
@@ -25,8 +26,18 @@ def binary_search(low, high, actual_number):
     guess = 0
 
     # Write your code in here
-
-    return {"guess": guess, "tries": tries}
+    while True:
+        difference = high - low
+        middlevalue = int(low + (difference / 2))
+        guess = middlevalue
+        # print(guess)
+        tries += 1
+        if guess == actual_number:
+            return {"guess": guess, "tries": tries}
+        elif guess > actual_number:
+            high = guess - 1
+        else:
+            low = guess + 1
 
 
 if __name__ == "__main__":
