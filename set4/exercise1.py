@@ -38,9 +38,25 @@ def get_some_details():
          dictionaries.
     """
     json_data = open(LOCAL + "/lazyduck.json").read()
-
     data = json.loads(json_data)
-    return {"lastName": None, "password": None, "postcodePlusID": None}
+    # print(data)
+    # print("results")
+    lastname = data["results"][0]["name"]["last"]
+    # print(lastname)
+    password = data["results"][0]["login"]["password"]
+    # print(password)
+    postcode = int(data["results"][0]["location"]["postcode"])
+    ID = int(data["results"][0]["id"]["value"])
+    postcodePlusID = postcode + ID
+    # print(ID)
+    return {
+        "lastName": lastname,
+        "password": password,
+        "postcodePlusID": postcodePlusID,
+    }
+
+
+get_some_details()
 
 
 def wordy_pyramid():
@@ -75,10 +91,23 @@ def wordy_pyramid():
     "Nereis",
     "Leto",
     ]
-    TIP: to add an argument to a URL, use: ?argName=argVal e.g. &wordlength=
+    TIP: to add an argument to a URL, use: ?argName=argVal e.g. &wordlength=10
     """
     pyramid = []
 
+    def appendword(integer):
+        word = requests.get(
+            f"https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={integer}"
+        )
+        # print(word.text)
+        pyramid.append(word.text)
+
+    for i in range(3, 20, 2):
+        appendword(i)
+    for i in range(20, 3, -2):
+        appendword(i)
+
+    # print("pyramid", pyramid)
     return pyramid
 
 
@@ -96,13 +125,28 @@ def pokedex(low=1, high=5):
          get very long. If you are accessing a thing often, assign it to a
          variable and then future access will be easier.
     """
-    id = 5
-    url = f"https://pokeapi.co/api/v2/pokemon/{id}"
-    r = requests.get(url)
-    if r.status_code is 200:
-        the_json = json.loads(r.text)
 
-    return {"name": None, "weight": None, "height": None}
+    prime_json = True
+
+    def get_json(id):
+        url = f"https://pokeapi.co/api/v2/pokemon/{id}"
+        r = requests.get(url)
+        if r.status_code == 200:
+            return json.loads(r.text)
+
+    for id in range(low, high):
+        the_json = get_json(id)
+        if prime_json == True:
+            prime_json = False
+            compared_json = the_json
+        if compared_json["height"] < the_json["height"]:
+            compared_json = the_json
+
+    return {
+        "name": compared_json["name"],
+        "weight": compared_json["weight"],
+        "height": compared_json["height"],
+    }
 
 
 def diarist():
