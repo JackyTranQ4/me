@@ -3,6 +3,7 @@
 
 import json
 import os
+from threading import local
 import requests
 import inspect
 import sys
@@ -150,6 +151,7 @@ def pokedex(low=1, high=5):
 
 
 def diarist():
+
     """Read gcode and find facts about it.
 
     Read in Trispokedovetiles(laser).gcode and count the number of times the
@@ -166,6 +168,16 @@ def diarist():
 
     NOTE: this function doesn't return anything. It has the _side effect_ of modifying the file system
     """
+    counter = 0
+    with open(
+        f"{LOCAL}/Trispokedovetiles(laser).gcode", "r", encoding="utf-8"
+    ) as lasersread:
+        for line in lasersread:
+            if "M10 P1" in line:
+                counter += 1
+                print(counter)
+    with open(f"{LOCAL}/ lasers.pew", "w", encoding="utf-8") as laserswrite:
+        laserswrite.write(str(counter))
     pass
 
 

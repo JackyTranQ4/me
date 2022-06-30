@@ -4,3 +4,4 @@ with open is better way
 Useful code:
 word = requests.get
 pyramid.append(word.text)
+f"{LOCAL}/Trispokedovetiles(laser).gcode"
