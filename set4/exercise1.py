@@ -176,7 +176,7 @@ def diarist():
             if "M10 P1" in line:
                 counter += 1
                 print(counter)
-    with open(f"{LOCAL}/ lasers.pew", "w", encoding="utf-8") as laserswrite:
+    with open(f"{LOCAL}/lasers.pew", "w", encoding="utf-8") as laserswrite:
         laserswrite.write(str(counter))
     pass
 
