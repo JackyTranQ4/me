@@ -6,3 +6,7 @@ baseURL = (
 )
 
 url = baseURL.format(length=i)
+
+optional arguments in functions eg
+def example_function(num=10)
+will take num 10 as default

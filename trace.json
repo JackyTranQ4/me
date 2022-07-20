@@ -161,19 +161,19 @@
   },
   {
     "of_total": 15,
-    "mark": 10,
+    "mark": 11,
     "results": [
       {
         "value": 1,
-        "name": "exercise 1: get_a_word_of_length_n yaply"
+        "name": "exercise 1: get_a_word_of_length_n haafs"
       },
       {
         "value": 1,
-        "name": "exercise 1: get_a_word_of_length_n uarekena"
+        "name": "exercise 1: get_a_word_of_length_n ituraean"
       },
       {
         "value": 1,
-        "name": "exercise 1: get_a_word_of_length_n ycie"
+        "name": "exercise 1: get_a_word_of_length_n iocs"
       },
       {
         "value": 1,
@@ -216,7 +216,7 @@
         "name": "exercise 2: abba hell\u21e8hell"
       },
       {
-        "value": 0,
+        "value": 1,
         "name": "exercise 2: Koch _|-|_"
       },
       {
