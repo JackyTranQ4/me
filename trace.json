@@ -161,19 +161,19 @@
   },
   {
     "of_total": 15,
-    "mark": 11,
+    "mark": 15,
     "results": [
       {
         "value": 1,
-        "name": "exercise 1: get_a_word_of_length_n haafs"
+        "name": "exercise 1: get_a_word_of_length_n xebec"
       },
       {
         "value": 1,
-        "name": "exercise 1: get_a_word_of_length_n ituraean"
+        "name": "exercise 1: get_a_word_of_length_n jabalina"
       },
       {
         "value": 1,
-        "name": "exercise 1: get_a_word_of_length_n iocs"
+        "name": "exercise 1: get_a_word_of_length_n ymca"
       },
       {
         "value": 1,
@@ -200,19 +200,19 @@
         "name": "Exercise 1: wordy_pyramid still works"
       },
       {
-        "value": 0,
+        "value": 1,
         "name": "exercise 2: abba baaab\u21e8bbaoaaobaobaobbbaaobaobbbaaobaobbbabbaoaaob"
       },
       {
-        "value": 0,
+        "value": 1,
         "name": "exercise 2: abba b\u21e8bbaoaaob"
       },
       {
-        "value": 0,
+        "value": 1,
         "name": "exercise 2: abba roof\u21e8roabbaoabbaf"
       },
       {
-        "value": 0,
+        "value": 1,
         "name": "exercise 2: abba hell\u21e8hell"
       },
       {
