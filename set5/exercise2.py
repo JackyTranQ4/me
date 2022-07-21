@@ -117,8 +117,9 @@ def abba(source="abba", guard=1):
             concatenate_this = apply_rules(letter, guard)
             newsource += concatenate_this
         source = newsource
-        print(source)
         guard -= 1
+
+    return source
 
 
 def koch(t, order, size):
