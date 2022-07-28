@@ -294,6 +294,8 @@ def fast_filler(number_of_words=200) -> str:
             savethis = json.dumps(my_dict)
             dict_filler_text_file.write(savethis)
             print("Saved")
+
+        with open(fname, "r", encoding="utf-8") as dict_filler_text_file:
             loadthis = dict_filler_text_file.read()
             my_dict = json.loads(loadthis)
             print("Loaded")
