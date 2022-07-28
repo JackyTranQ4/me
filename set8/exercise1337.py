@@ -278,6 +278,7 @@ def fast_filler(number_of_words=200) -> str:
     it'll convert integer keys to strings.
     If you get this one to work, you are a Very Good Programmer™!
     """
+    # Json imported
 
     fname = "dict_cache.json"
     paragraph = ""
