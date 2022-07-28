@@ -291,7 +291,7 @@ def fast_filler(number_of_words=200) -> str:
     except Exception as e:
         with open(fname, "w", encoding="utf-8") as dict_filler_text_file:
             my_dict = make_filler_text_dictionary()
-            savethis = json.dumps(dict_filler_text)
+            savethis = json.dumps(my_dict)
             dict_filler_text_file.write(savethis)
             print("Saved")
             loadthis = dict_filler_text_file.read()
@@ -304,7 +304,6 @@ def fast_filler(number_of_words=200) -> str:
         words.append(my_dict[random_length][random_word])
         return_this = " ".join(words)
     return_this = return_this.capitalize() + "."
-
     return return_this
 
 
